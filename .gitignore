@@ -39,3 +39,4 @@ coverage/
 # Database data (if running postgres locally without Docker volume)
 postgres_data/
 redis_data/
+bot.pid
