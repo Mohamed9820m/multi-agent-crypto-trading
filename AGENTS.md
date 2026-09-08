@@ -36,6 +36,7 @@ Use the CLI viewer to see balances, open orders, recent orders, and trades on th
 ```bash
 npm run view:orders        # default symbol from .env / BTCUSDT
 npm run view:orders ETHUSDT
+npm run scan:scalping      # scan top 30 futures pairs for scalping signals
 ```
 
 Spot Testnet is **API-only** — there is no web trading GUI. `https://testnet.binance.vision` is only for API key generation and docs. This is **not** `demo.binance.com`.
