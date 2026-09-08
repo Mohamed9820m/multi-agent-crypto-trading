@@ -1,0 +1,51 @@
+{
+  "name": "multi-agent-crypto-trading",
+  "version": "0.1.0",
+  "description": "Multi-agent crypto trading system for Binance (testnet-first)",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/src/index.js",
+    "start:orchestrator": "node dist/src/index.js",
+    "start:guardian": "node dist/scripts/run-guardian.js",
+    "start:reporting": "node dist/scripts/run-reporting.js",
+    "cycle": "tsx scripts/run-cycle.ts",
+    "guardian": "tsx scripts/run-guardian.ts",
+    "report": "tsx scripts/run-report.ts",
+    "backtest": "tsx scripts/run-backtest.ts",
+    "view:orders": "tsx scripts/view-orders.ts",
+    "db:init": "docker compose up -d postgres redis && sleep 2 && psql $DATABASE_URL -f scripts/init-db.sql",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "crypto",
+    "trading",
+    "binance",
+    "multi-agent"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "decimal.js": "^10.4.3",
+    "dotenv": "^16.4.5",
+    "pg": "^8.12.0",
+    "redis": "^4.7.0",
+    "viem": "^2.56.3",
+    "winston": "^3.13.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.6",
+    "@types/ws": "^8.5.12",
+    "tsx": "^4.16.5",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
